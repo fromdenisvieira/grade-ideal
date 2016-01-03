@@ -1,0 +1,53 @@
+.parallax-container {
+  position: relative;
+  overflow: hidden;
+  height: 200px;
+}
+
+/* label color */
+ .input-field label {
+   color: #fff;
+ }
+
+ .input-field input,textarea{
+     color: #fff;
+ }
+ /* label focus color */
+ .input-field input:focus + label {
+   color: red;
+ }
+ /* label underline focus color */
+ .input-field input:focus {
+   border-bottom: 1px solid red;
+   box-shadow: 0 1px 0 0 red;
+ }
+ /* valid color */
+ .input-field input.valid {
+   border-bottom: 1px solid red;
+   box-shadow: 0 1px 0 0 red;
+ }
+ /* invalid color */
+ .input-field input.invalid {
+   border-bottom: 1px solid #000;
+   box-shadow: 0 1px 0 0 #000;
+ }
+ /* icon prefix focus color */
+ .input-field .prefix.active {
+   color: #fff;
+ }
+
+.collection-item div{
+    input[type='checkbox']{
+
+    }
+}
+
+tr td{
+    font-weight: bold;
+    p{
+        font-weight: normal;
+    }
+}
+.no-radius th{
+    border-radius: 0;
+}

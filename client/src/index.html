@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="Cache-Control: max-age=3600, must-revalidate"/>
+    <meta name="description" content="Ajuste de Matricula">
+    <title>Ajuste de Matricula - S.I</title>
+
+    <!-- Favicon -->
+    <!-- <link rel="shortcut icon" href="assets/images/favicon.ico"/> -->
+
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <link href="lib/Materialize/dist/css/materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="lib/font-awesome/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="assets/style.css">
+
+</head>
+<body ng-app="ajusteMatricula">
+
+
+    <div class="main" ui-view></div>
+
+
+    <script src="./lib/angular/angular.min.js"></script>
+    <script src="./lib/jquery/dist/jquery.min.js"></script>
+    <script src="./lib/Materialize/dist/js/materialize.min.js"></script>
+    <script src="./lib/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script src="./lib/angular-filter/dist/angular-filter.min.js"></script>
+
+    <script src="app/app.js"></script>
+    <script src="app/config.js"></script>
+    <script src="app/init.js"></script>
+    <script src="assets/js/jsPDF/dist/jspdf.min.js" charset="utf-8"></script>
+
+    <script src="app/services/disciplines/DisciplinesService.js"></script>
+    <script src="app/services/semesterGrid/SemesterGridService.js"></script>
+
+    <script src="app/modules/dashboard/module.js"></script>
+    <script src="app/modules/dashboard/controllers/DashboardRetrieveCtrl.js"></script>
+
+    <script src="app/modules/results/module.js"></script>
+    <script src="app/modules/results/controllers/ResultsRetrieveCtrl.js"></script>
+
+    <script src="app/modules/home/module.js"></script>
+    <script src="app/modules/home/controllers/HomeRetrieveCtrl.js"></script>
+</body>
+</html>

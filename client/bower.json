@@ -1,0 +1,27 @@
+{
+  "name": "grade-ideal",
+  "description": "Frontend for a application .",
+  "main": "gulpfile.js",
+  "authors": [
+    "Denis Vieira <denisvieira05@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/AllanDenis/grade-ideal",
+  "moduleType": [],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "./src/lib",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.4.8",
+    "angular-ui-router": "~0.2.15",
+    "font-awesome": "~4.5.0",
+    "jquery": "~2.1.4",
+    "Materialize": "materialize#~0.97.5",
+    "angular-filter": "~0.5.8"
+  }
+}

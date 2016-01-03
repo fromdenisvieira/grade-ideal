@@ -60,3 +60,12 @@ target/
 
 #SQL dumps
 *.sql
+
+
+# Specifies Client
+
+client/node_modules
+client/bower_components
+client/src/lib
+client/dist
+client/public
