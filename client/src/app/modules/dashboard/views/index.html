@@ -23,12 +23,16 @@
 
         <div class="row">
 
-            <div class="col l4 s12 m6" ng-repeat="(key,periodo) in vm.disciplines | groupBy: 'periodo'">
+            <div class="col l6 s12 m6" ng-repeat="(key,periodo) in vm.disciplines | groupBy: 'periodo'">
                 <ul class="collection with-header hoverable">
                     <li class="collection-header center"><h5>{{ key }}º Período</h5></li>
+                    <li class="collection-item" >
+                        <div><input class="" type="checkbox" id="" />
+                        <label class="" for="">SELECIONAR TODAS</label></div>
+                    </li>
                     <li class="collection-item" ng-repeat="discipline in periodo">
-                        <div><input type="checkbox" id="filled-in-box"  checked="checked" />
-                        <label for="filled-in-box">{{ discipline.nome }}</label></div>
+                        <div><input type="checkbox" id="{{discipline.id}}" checklist-model="getSelectedDisciplines()" checklist-value="discipline.id" />
+                        <label for="{{discipline.id}}">{{ discipline.nome }}</label></div>
                     </li>
                 </ul>
             </div>

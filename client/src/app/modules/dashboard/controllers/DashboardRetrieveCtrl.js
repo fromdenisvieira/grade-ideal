@@ -8,20 +8,12 @@
 
         var vm = this;
 
-        // vm.disciplines = DisciplinesPrepService.disciplinas;
-        // console.log(vm.disciplines);
-
-        vm.players = [
-          {name: 'Gene', team: 'alpha'},
-          {name: 'George', team: 'beta'},
-          {name: 'Steve', team: 'gamma'},
-          {name: 'Paula', team: 'beta'},
-          {name: 'Scruath', team: 'gamma'}
-        ];
-
-        // Other Option for call service when access route
-
         vm.disciplines = [];
+        vm.selectedDisciplines = [];
+
+
+        vm.checkall = checkAll;
+        vm.getSelectedDisciplines = getSelectedDisciplines;
 
         activate();
 
@@ -31,6 +23,8 @@
             });
         }
 
+        // vm.disciplines = DisciplinesPrepService.disciplinas;
+        // console.log(vm.disciplines);
         //////////////////////////////////////////////////////////
 
        function getDisciplines(){
@@ -42,6 +36,18 @@
             function(){
                 alert('erro');
             });
+        }
+
+        function getSelectedDisciplines() {
+                return vm.selectedDisciplines;
+        }
+
+        function checkAll(){
+            vm.selectedDisciplines = vm.disciplines.map(function(item){ return item.id; });
+            console.log(vm.selectedDisciplines);
+        }
+        function uncheckAll(){
+
         }
 
     }
