@@ -26,8 +26,8 @@
             <div class="col l6 s12 m6" ng-repeat="(key,periodo) in vm.disciplines | groupBy: 'periodo'">
                 <ul class="collection with-header hoverable">
                     <li class="collection-header center"><h5>{{ key }}º Período</h5></li>
-                    <li class="collection-item center" >
-                        <a class="waves-effect waves-light green-text text-darken-4" ng-click="vm.checkall(key)">SELECIONAR TODAS</a>
+                    <li class="collection-item center" ng-click="vm.checkall(key)" style="cursor:pointer;">
+                        <span class="waves-effect waves-light green-text text-darken-4">SELECIONAR TODAS</span>
                     </li>
                     <li class="collection-item" ng-repeat="discipline in periodo">
                         <div><input type="checkbox" id="{{discipline.id}}" checklist-model="vm.selectedDisciplines" ng-click="vm.checkSelected()" checklist-value="discipline.id" />

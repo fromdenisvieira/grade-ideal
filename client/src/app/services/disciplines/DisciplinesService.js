@@ -35,6 +35,14 @@
 			return retorno.promise;
 		}
 
+		function getSelected() {
+
+		}
+
+		function watchDiscipline(){
+
+		}
+
 
 	}
 

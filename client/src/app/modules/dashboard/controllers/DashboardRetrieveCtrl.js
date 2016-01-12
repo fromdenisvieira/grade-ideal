@@ -81,28 +81,30 @@
                     if(idsPeriodDisciplines[i]===vm.selectedDisciplines[x]){
                         addAllToArray=false;
                         countToUncheckAll++;
-                    }else{
-                        // // console.log("adicionou resto: ",idsPeriodDisciplines[i]);
-                        // checkRest.push(idsPeriodDisciplines[i]);
-                        // console.log(checkRest);
+                        console.log("value of disciplines incluidas: ",countToUncheckAll);
+                    }
+                    if(idsPeriodDisciplines[i]!==vm.selectedDisciplines[x]){
+                        vm.selectedDisciplines.push(idsPeriodDisciplines[i]);
                     }
                 }
 
             }
 
-            // if(countToUncheckAll === idsPeriodDisciplines.length){
-            //     // remove todas as disciplinas do periodo
-            //     for(var x=0;x<vm.selectedDisciplines.length;x++){
-            //         for (var i = 0; i < idsPeriodDisciplines.length; i++) {
-            //             if(idsPeriodDisciplines[i]===vm.selectedDisciplines[x]){
-            //                 vm.selectedDisciplines.splice(x,1);
-            //             }
-            //         }
-            //     }
-            // }
+            // console.log("items para marcar : ",checkRest);
+
+            if(countToUncheckAll === idsPeriodDisciplines.length){
+                // remove todas as disciplinas do periodo
+                for(var x=0;x<vm.selectedDisciplines.length;x++){
+                    for (var i = 0; i < idsPeriodDisciplines.length; i++) {
+                        if(idsPeriodDisciplines[i]===vm.selectedDisciplines[x]){
+                            vm.selectedDisciplines.splice(x,1);
+                        }
+                    }
+                }
+            }
             //
             // if(checkRest !== [] && addAllToArray === false){
-            //     for (var i = 0; i < checkRest.length; i++) {
+            //     for (var i = 0; i < checkRest.length-1; i++) {
             //         vm.selectedDisciplines.push(checkRest[i]);
             //     }
             // }
