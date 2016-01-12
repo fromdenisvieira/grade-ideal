@@ -11,11 +11,11 @@
 
 			var completedDisciplinesToJson = function (){
 
-	    		return angular.toJson(completedDisciplines);
+	    		return angular.toJson({"historico":completedDisciplines});
 			};
 
 
-			$http.post(APP_SETTINGS.API_URL+'/grade', completedDisciplinesToJson())
+			$http.post(APP_SETTINGS.API_URL+'/grades', completedDisciplinesToJson())
 			.success(function(result) {
 
 				retorno.resolve(result);

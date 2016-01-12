@@ -11,9 +11,7 @@
         vm.gridToPdf = gridToPdf;
 
 
-
         ///////////////////////////////////////////////////
-
 
 
         function gridToPdf() {
@@ -24,7 +22,7 @@
 
             pdf.addImage(imgData, 'png', 170, 500, 300, 113);
 
-            pdf.setFontSize(25);
+            pdf.setFontSize(25);e
             pdf.text(160, 50, 'Instituto Federal de Alagoas');
 
             pdf.setFontSize(15);

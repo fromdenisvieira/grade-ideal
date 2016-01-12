@@ -26,12 +26,11 @@
             <div class="col l6 s12 m6" ng-repeat="(key,periodo) in vm.disciplines | groupBy: 'periodo'">
                 <ul class="collection with-header hoverable">
                     <li class="collection-header center"><h5>{{ key }}º Período</h5></li>
-                    <li class="collection-item" >
-                        <div><input class="" type="checkbox" id="" />
-                        <label class="" for="">SELECIONAR TODAS</label></div>
+                    <li class="collection-item center" >
+                        <a class="waves-effect waves-light green-text text-darken-4" ng-click="vm.checkall(key)">SELECIONAR TODAS</a>
                     </li>
                     <li class="collection-item" ng-repeat="discipline in periodo">
-                        <div><input type="checkbox" id="{{discipline.id}}" checklist-model="getSelectedDisciplines()" checklist-value="discipline.id" />
+                        <div><input type="checkbox" id="{{discipline.id}}" checklist-model="vm.selectedDisciplines" ng-click="vm.checkSelected()" checklist-value="discipline.id" />
                         <label for="{{discipline.id}}">{{ discipline.nome }}</label></div>
                     </li>
                 </ul>
@@ -39,7 +38,7 @@
         </div>
 
         <div class="row center">
-            <button class="waves-effect waves-light btn-large green darken-4" type="submit"><i class="material-icons right">dashboard</i>GERAR GRADE</button>
+            <button type="button" class="waves-effect waves-light btn-large green darken-4" ng-click="vm.getGrid()"><i class="material-icons right">dashboard</i>GERAR GRADE</button>
         </div>
 
     </br></br>

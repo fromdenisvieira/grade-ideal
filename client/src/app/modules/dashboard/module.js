@@ -3,7 +3,7 @@
     'use strict';
 
     angular
-        .module('ajusteMatricula.dashboard', ['ui.router','angular.filter','checklist-model'])
+        .module('ajusteMatricula.dashboard', ['ui.router','angular.filter','checklist-model','LocalStorageModule'])
         .config(config);
 
 
