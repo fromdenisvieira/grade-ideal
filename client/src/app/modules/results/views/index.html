@@ -40,19 +40,19 @@
                 <tbody>
                   <tr>
                     <td ><span>18h50</span></br><hr><span>19h40</span></td>
-                    <td ng-repeat="discipline in vm.grade | filteredGrid:horario">{{discipline.sigla}}<p>{{discipline.periodo}} || {{ discipline.horario }}</p></td>
+                    <td ng-repeat="discipline in vm.grade">{{discipline.sigla}}<p>{{discipline.periodo}}º Período</p></td>
                   </tr>
                   <tr>
                     <td ><span>19h40</span></br><hr><span>20h30</span></td>
-                    <td ng-repeat="discipline in vm.grade">{{discipline.sigla}}<p>{{discipline.periodo}}</p></td>
+                    <td ng-repeat="discipline in vm.grade">{{discipline.sigla}}<p>{{discipline.periodo}}º Período</p></td>
                   </tr>
                   <tr>
                     <td ><span>20h40</span></br><hr><span>21h30</span></td>
-                    <td ng-repeat="discipline in vm.grade">{{discipline.sigla}}<p>{{discipline.periodo}}</p></td>
+                    <td ng-repeat="discipline in vm.grade">{{discipline.sigla}}<p>{{discipline.periodo}}º Período</p></td>
                   </tr>
                   <tr>
                     <td ><span>21h30</span></br><hr><span>22h20</span></td>
-                    <td ng-repeat="discipline in vm.grade">{{discipline.sigla}}<p>{{discipline.periodo}}</p></td>
+                    <td ng-repeat="discipline in vm.grade">{{discipline.sigla}}<p>{{discipline.periodo}}º Período</p></td>
                   </tr>
                 </tbody>
               </table>
