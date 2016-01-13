@@ -1,12 +1,12 @@
 
 
-<div class="navbar-fixed">
+<div class="navbar-fixed noPrint">
   <nav class="white darken-4">
     <div class="nav-wrapper container">
       <a ng-href="#/" class="brand-logo"><img src="assets/img/if-logo.png" style="width: 4em;padding-top: 8%;" alt=""></a>
       <ul class="right hide-on-med-and-down">
           <li><a ng-href="#/" class="black-text">HOME</a></li>
-          <li><a href="https://github.com/AllanDenis/ajuste-de-matricula" target="_blank"><i class="fa fa-github black-text"></i></a></li>
+          <li><a href="https://github.com/AllanDenis/grade-ideal" target="_blank"><i class="fa fa-github black-text"></i></a></li>
       </ul>
     </div>
   </nav>
@@ -15,85 +15,76 @@
 <section class="section no-pad-bot" >
     <div class="container">
 
-        <div class="row">
+     <div class="row">
           <div class="col s12 center">
-            <h4>Seu Horário Ideal</h4>
+            <h4>Horários Ideais</h4>
+          </div>
+          <ul class="pagination center">
+              <li class="waves-effect"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
+              <li class="active green darken-4"><a ng-href="#/results/1" >1</a></li>
+              <li class="waves-effect"><a ng-href="#/results/1">2</a></li>
+              <li class="waves-effect"><a ng-href="#/results/1">3</a></li>
+              <li class="waves-effect"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
+            </ul>
+      </div>
+
+      <div class="row">
+          <div class="col l12" id="grid" >
+              <table class="responsive-table centered" id="tableGrid">
+                <thead class="green darken-4 white-text">
+                  <tr class="no-radius">
+                      <th ng-repeat="(n, value) in ['Horário','Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta']">{{value}}</th>
+                  </tr>
+                </thead>
+
+                <tbody>
+                  <tr>
+                    <td ><span>18h50</span></br><hr><span>19h40</span></td>
+                    <td ng-repeat="discipline in vm.grade | filteredGrid:horario">{{discipline.sigla}}<p>{{discipline.periodo}} || {{ discipline.horario }}</p></td>
+                  </tr>
+                  <tr>
+                    <td ><span>19h40</span></br><hr><span>20h30</span></td>
+                    <td ng-repeat="discipline in vm.grade">{{discipline.sigla}}<p>{{discipline.periodo}}</p></td>
+                  </tr>
+                  <tr>
+                    <td ><span>20h40</span></br><hr><span>21h30</span></td>
+                    <td ng-repeat="discipline in vm.grade">{{discipline.sigla}}<p>{{discipline.periodo}}</p></td>
+                  </tr>
+                  <tr>
+                    <td ><span>21h30</span></br><hr><span>22h20</span></td>
+                    <td ng-repeat="discipline in vm.grade">{{discipline.sigla}}<p>{{discipline.periodo}}</p></td>
+                  </tr>
+                </tbody>
+              </table>
           </div>
       </div>
 
-        <div class="row">
-            <div class="col l12" id="grid" >
-                <table class="responsive-table centered" id="tableGrid">
-                  <thead class="green darken-4 white-text">
-                    <tr class="no-radius">
-                        <th>Horários</th>
-                        <th>Segunda</th>
-                        <th>Terça</th>
-                        <th>Quarta</th>
-                        <th>Quinta</th>
-                        <th>Sexta</th>
-                    </tr>
-                  </thead>
+      <div class="row">
+          <div class="col l12 center noPrint">
+              <a ng-href="#/dashboard" class="waves-effect waves-light btn-large orange darken-4"><i class="material-icons right">settings_backup_restore</i>REFAZER</a>
+              &nbsp;&nbsp;&nbsp;&nbsp;
+              <button class="waves-effect waves-light btn-large green darken-4" onclick="javascript:window.print()"><i class="material-icons right">play_for_work</i>PDF DOWNLOAD</button>
+              </br></br>
+          </div>
+      </div>
 
-                  <tbody>
-                    <tr>
-                      <td>18h50 - 19h40</td>
-                      <td>TESI <p>Marcilio</p></td>
-                      <td>GEPJ <p>Hélio</p></td>
-                      <td>MPEC <p>Mõnica</p></td>
-                      <td>GSINF <p>Tárcio</p></td>
-                      <td>GDSW <p>Evelyn</p></td>
-                    </tr>
-                    <tr>
-                      <td>19h40 - 20h30 </td>
-                      <td>TESI <p>Marcilio</p></td>
-                      <td>GEPJ <p>Hélio</p></td>
-                      <td>MPEC <p>Mõnica</p></td>
-                      <td>GSINF <p>Tárcio</p></td>
-                      <td>GDSW <p>Evelyn</p></td>
-                    </tr>
-                    <tr>
-                      <td>20h40 - 21h30</td>
-                      <td>TESI <p>Marcilio</p></td>
-                      <td>GEPJ <p>Hélio</p></td>
-                      <td>MPEC <p>Mõnica</p></td>
-                      <td>GSINF <p>Tárcio</p></td>
-                      <td>GDSW <p>Evelyn</p></td>
-                    </tr>
-                    <tr>
-                        <td>21h30 - 22h20</td>
-                        <td>TESI <p>Marcilio</p></td>
-                        <td>GEPJ <p>Hélio</p></td>
-                        <td>MPEC <p>Mõnica</p></td>
-                        <td>GSINF <p>Tárcio</p></td>
-                        <td>GDSW <p>Evelyn</p></td>
-                    </tr>
-                  </tbody>
-                </table>
-            </div>
-        </div>
 
-        <div class="row center">
-            <a ng-href="#/dashboard" class="waves-effect waves-light btn-large orange darken-4"><i class="material-icons right">settings_backup_restore</i>REFAZER</a>
-            &nbsp;&nbsp;&nbsp;&nbsp;
-            <button class="waves-effect waves-light btn-large green darken-4" ng-click="vm.gridToPdf()"><i class="material-icons right">play_for_work</i>PDF DOWNLOAD</button>
-        </div>
 
-    </br></br>
+        </br></br>
 
 
     </div>
 </section>
 
 
-<footer class="page-footer green darken-4 no-pad-bot">
+<footer class="page-footer green darken-4 no-pad-bot noPrint">
   <div class="container">
     <div class="row">
       <div class="col l6 s12">
         <h5 class="white-text">Ajuste de Matrícula - BSI</h5>
     </br>
         <div class="">
-          <a href="https://github.com/AllanDenis/ajuste-de-matricula" target="_blank" class="waves-effect waves-light btn-large white black-text"><h5>Contribua  <i class="fa fa-github fa-4x"></i></h5> </a>
+          <a href="https://github.com/AllanDenis/grade-ideal" target="_blank" class="waves-effect waves-light btn-large white black-text"><h5>Contribua  <i class="fa fa-github fa-4x"></i></h5> </a>
         </div>
 
       </div>
@@ -108,7 +99,7 @@
   </div>
   <div class="footer-copyright">
     <div class="container">
-      Criado por <a class="brown-text text-lighten-3" href="http://materializecss.com">Allan Denis</a> e <a class="brown-text text-lighten-3" href="http://materializecss.com">Denis Vieira</a> .
+      Criado por <a class="brown-text text-lighten-3" href="https://github.com/AllanDenis/">Allan Denis</a> e <a class="brown-text text-lighten-3" href="https://github.com/fromdenisvieira/">Denis Vieira</a> .
     </div>
   </div>
 </footer>

@@ -23,10 +23,6 @@
             });
         }
 
-        vm.checkSelected = function(){
-            console.log(vm.selectedDisciplines);
-        }
-
         // vm.disciplines = DisciplinesPrepService.disciplinas;
         // console.log(vm.disciplines);
         //////////////////////////////////////////////////////////
@@ -44,10 +40,8 @@
 
         function getGrid() {
             return SemesterGridService.gerar(vm.selectedDisciplines).then(function(data){
-
-                vm.disciplines = data.grades;
-                console.log(vm.disciplines);
-                return vm.disciplines;
+                localStorageService.set("Grades", data.grades);
+                $location.path('/results/1')
             })
             .catch(function(error){
                     alert('erro');

@@ -51,3 +51,7 @@ tr td{
 .no-radius th{
     border-radius: 0;
 }
+
+@media print{
+    .noPrint{display: none !important}
+}

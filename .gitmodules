@@ -1,3 +1,0 @@
-[submodule "client/src/assets/js/jsPDF"]
-	path = client/src/assets/js/jsPDF
-	url = git@github.com:MrRio/jsPDF.git

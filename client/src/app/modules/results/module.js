@@ -13,13 +13,10 @@
 
     $stateProvider
       .state('results', {
-        url: '/results',
+        url: '/results/:gridId',
         templateUrl: modulePath+'index.html',
         controller: 'ResultsRetrieveCtrl',
         controllerAs: 'vm'
-        // resolve: {
-        //     SemesterGridPrepService: SemesterGridPrepService
-        // }
     });
 
   }

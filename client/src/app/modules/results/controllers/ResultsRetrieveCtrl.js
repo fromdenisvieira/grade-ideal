@@ -2,16 +2,49 @@
     'use strict';
     angular.module('ajusteMatricula.results').controller('ResultsRetrieveCtrl', ResultsRetrieveCtrl);
 
-    ResultsRetrieveCtrl.$inject = ['$scope', '$rootScope', '$location', 'APP_SETTINGS','SemesterGridPrepService'];
+    ResultsRetrieveCtrl.$inject = ['$scope', '$rootScope', '$location', 'APP_SETTINGS','localStorageService','$q','$timeout','$stateParams'];
 
-    function ResultsRetrieveCtrl($scope, $rootScope, $location, APP_SETTINGS,SemesterGridPrepService) {
+    function ResultsRetrieveCtrl($scope, $rootScope, $location, APP_SETTINGS,localStorageService,$q,$timeout,$stateParams) {
 
         var vm = this;
-        vm.disciplines = SemesterGridPrepService;
-        vm.gridToPdf = gridToPdf;
+        // vm.disciplines = SemesterGridPrepService;
+        // vm.gridToPdf = gridToPdf;
+
+        var gridId = $stateParams.gridId;
+
+        getGrids().then(function(data){
+           vm.grade = data[gridId];
+           console.log("grade 1",vm.grade[1].horario[3]);
+        }).catch(function(error){
+                alert('erro');
+        });
+
+        vm.filteredGrid = function (tasks,tags) {
+
+             return tasks.filter(function(task) {
+
+                 for (var i in task.Tags) {
+                     if (tags.indexOf(task.Tags[i]) != -1) {
+                         return true;
+                     }
+                 }
+                 return false;
+
+             });
+
+         };
 
 
         ///////////////////////////////////////////////////
+
+        function getGrids(){
+           var deferred = $q.defer();
+           $timeout(function(){
+             var data=localStorageService.get('Grades');
+             deferred.resolve(data);
+            },1000);
+           return deferred.promise;
+        }
 
 
         function gridToPdf() {
