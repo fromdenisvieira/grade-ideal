@@ -83,9 +83,9 @@
                         countToUncheckAll++;
                         console.log("value of disciplines incluidas: ",countToUncheckAll);
                     }
-                    if(idsPeriodDisciplines[i]!==vm.selectedDisciplines[x]){
-                        vm.selectedDisciplines.push(idsPeriodDisciplines[i]);
-                    }
+                    // if(idsPeriodDisciplines[i]!==vm.selectedDisciplines[x]){
+                    //     vm.selectedDisciplines.push(idsPeriodDisciplines[i]);
+                    // }
                 }
 
             }
